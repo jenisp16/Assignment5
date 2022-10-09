@@ -1,0 +1,42 @@
+//Name : Jenis Patel
+//Student ID : 21CE093
+import java.io.*;
+import java.util.*;
+public class Pr5_3 {
+    public static void copyContent(File m, File n)
+    throws Exception {
+        FileInputStream in = new FileInputStream(m);
+        FileOutputStream out = new FileOutputStream(n);
+        try {
+            int a;
+            while ((a = in.read()) != -1) {
+                out.write(a);
+            }
+        } finally {
+            if (in != null) {
+                in.close();
+            }
+            if (out != null) {
+                out.close();
+            }
+        }
+        System.out.println("File Copied");
+    }
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the source filename from where you have to read/copy :");
+        String m = sc.nextLine();
+        File x = new File(m);
+        System.out.println("Enter the destination filename where you have to write/paste :");
+        String n = sc.nextLine();
+        File y = new File(n);
+        copyContent(x, y);
+        sc.close();
+    }
+}
+
+
+
+
+
+
