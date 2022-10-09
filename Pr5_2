@@ -1,0 +1,23 @@
+//Name : Jenis Patel
+//Student ID : 21CE093
+import java.util.*;
+import java.io.*;
+public class Pr5_2 {
+    public static void main(String[] args)
+    throws IOException {
+        FileReader sourceStream = null;
+        try {
+        sourceStream = new FileReader("/Users/Jenis/Desktop/demo.rtf");
+            int temp;
+            while ((temp = sourceStream.read()) != -1)
+                System.out.println((char) temp);
+            System.out.println("Program executed sucessfully");
+        } finally {
+            if (sourceStream != null)
+                sourceStream.close();
+        }
+    }
+}
+
+
+
